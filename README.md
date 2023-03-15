@@ -20,7 +20,9 @@ This script is a command-line tool that utilizes OpenAI's GPT-3.5 Turbo to gener
 * Stop the background loading message and display the summary provided by the model.
 * Remove the temporary output file.
 
-## Usage Instructions:
+## Install & Usage Instructions:
+
+This script was made for linux or the linux subsystem on windows.
 
 Update the OpenAI API Key: Replace <OpenAi_API_Key> in the get_response() function with your actual OpenAI API key. There are two instances where you need to replace this placeholder. The lines are:
 
