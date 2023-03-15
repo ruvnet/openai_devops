@@ -1,4 +1,8 @@
 #!/bin/bash
+#  DAA - Decentralized Autonomous Application 
+#        /\__/\   - daa.rs 
+#       ( o.o  )  - v0.0.1
+#         >^<     - by @rUv
 
 # Function to display a loading animation
 show_loading() {
