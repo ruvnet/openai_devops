@@ -104,7 +104,7 @@ get_response() {
   local temperature=$1
   curl -s https://api.openai.com/v1/chat/completions \
     -H 'Content-Type: application/json' \
-    -H 'Authorization: <API-KEY>' \
+    -H 'Authorization: Bearer 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' \
     -d '{
     "model": "gpt-3.5-turbo",
     "messages": [{"role": "system", "content": "You are a helpful assistant. You will generate '"$SHELL"' commands based on user input. Your response should contain ONLY the command and NO explanation. Do NOT ever use newlines to separate commands, instead use ; or &&. The current working directory is '"$cwd"'."}, {"role": "user", "content": "'"$args"'"}],
@@ -192,7 +192,7 @@ else
 
   summary_response=$(curl -s https://api.openai.com/v1/chat/completions \
     -H 'Content-Type: application/json' \
-    -H 'Authorization: <API-KEY>' \
+    -H 'Authorization: Bearer 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' \
     -d "$summary_request")
 
   # Stop the background loading message by sending a SIGTERM signal
