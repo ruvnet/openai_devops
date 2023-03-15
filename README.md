@@ -1,6 +1,11 @@
 # ruvbot - Devops using OpenAi ChatGPT Model
 This script is a command-line tool that utilizes OpenAI's GPT-3.5 Turbo to generate shell commands based on user input. The script also features a loading animation and provides summaries of command outputs.
 
+## More details
+This script serves as a valuable tool for server administrators and DevOps professionals who want to simplify their daily tasks and improve their workflow. By leveraging the OpenAI API and ChatGPT model, the script generates shell command suggestions based on user input, allowing users to perform a wide range of operations with ease.
+
+The key advantage of using this script is its ability to understand natural language input and translate it into relevant shell commands. This not only saves time but also reduces the likelihood of human error when performing complex tasks. Moreover, the script provides multiple command options, empowering users to make informed decisions while executing their tasks.
+
 Here's a breakdown of the script:
 
 * Define a show_loading function to display a loading animation.
