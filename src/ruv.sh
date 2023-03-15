@@ -1,10 +1,8 @@
 #!/bin/bash
-
 #  DAA - Decentralized Autonomous Application 
 #        /\__/\   - daa.rs 
 #       ( o.o  )  - v0.0.1
 #         >^<     - by @rUv
-
 
 # Function to display a loading animation
 show_loading() {
@@ -16,7 +14,6 @@ show_loading() {
     done
   done
 }
-
 
 echo ""
 echo "    ___T_     "
@@ -36,40 +33,7 @@ show_help() {
   echo "  -h, --help    Show this help message and exit"
   echo ""
   echo "This script takes user input and generates shell commands based on the input using OpenAI's GPT-3.5 Turbo."
-  echo ""
-  echo "Common Commands:"
-  echo "  File Management & Storage:"
-  echo "    ls              List files and directories in the current directory"
-  echo "    cd              Change the current working directory"
-  echo "    mkdir           Create a new directory"
-  echo "    touch           Create a new file"
-  echo "    rm              Remove a file or directory"
-  echo "    cp              Copy a file or directory"
-  echo "    mv              Move or rename a file or directory"
-  echo ""
-  echo "  Networking:"
-  echo "    ping            Test network connectivity to a host"
-  echo "    curl            Transfer data from or to a server"
-  echo "    ssh             Connect to a remote server securely"
-  echo ""
-  echo "  Coding:"
-  echo "    Rust:"
-  echo "      cargo         Package manager for Rust"
-  echo "      rustc         Rust compiler"
-  echo ""
-  echo "    Python:"
-  echo "      pip           Package installer for Python"
-  echo "      python        Python interpreter"
-  echo ""
-  echo "    NPM:"
-  echo "      npm           Package manager for Node.js"
-  echo "      node          Node.js runtime environment"
-  echo ""
-  echo "    AWS:"
-  echo "      awscli        Command-line interface for AWS"
 }
-
-
 # Check for help argument
 for arg in "$@"; do
   case $arg in
@@ -104,7 +68,7 @@ get_response() {
   local temperature=$1
   curl -s https://api.openai.com/v1/chat/completions \
     -H 'Content-Type: application/json' \
-    -H 'Authorization: Bearer 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' \
+    -H 'Authorization: <OpenAi_API_Key>' \
     -d '{
     "model": "gpt-3.5-turbo",
     "messages": [{"role": "system", "content": "You are a helpful assistant. You will generate '"$SHELL"' commands based on user input. Your response should contain ONLY the command and NO explanation. Do NOT ever use newlines to separate commands, instead use ; or &&. The current working directory is '"$cwd"'."}, {"role": "user", "content": "'"$args"'"}],
@@ -192,7 +156,7 @@ else
 
   summary_response=$(curl -s https://api.openai.com/v1/chat/completions \
     -H 'Content-Type: application/json' \
-    -H 'Authorization: Bearer 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' \
+    -H 'Authorization: <OpenAi_API_Key>' \
     -d "$summary_request")
 
   # Stop the background loading message by sending a SIGTERM signal
